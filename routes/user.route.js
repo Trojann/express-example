@@ -7,6 +7,12 @@ const UserController = require('../controllers/user.ctr')
 
 router.get('/', UserController.index)
 
+router.get('/cookie', (req, res, next) => {
+	res.cookie('id', 12345)
+	res.send('Test cookie')
+	next()
+})
+
 router.get('/search', UserController.search)
 
 router.get('/create', UserController.create)
