@@ -3,6 +3,8 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const db = require('./db.js')
 const userRoute = require('./routes/user.route')
+const authRoute = require('./routes/auth.route')
+const AuthMiddleware = require('./middlewares/auth.mdw')
 
 const app = express()
 const port = 8080
@@ -17,7 +19,9 @@ app.get('/', (req, res) => res.render('index', {
 	name: 'Thu'
 }))
 
-app.use('/users', userRoute)
+app.use('/users', AuthMiddleware.requireAuth, userRoute)
+
+app.use('/auth', authRoute)
 
 app.use(express.static('public'))
 

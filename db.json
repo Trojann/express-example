@@ -28,7 +28,9 @@
     {
       "name": "Thu",
       "phone": "123123123132",
-      "id": "AAhkBWQnp"
+      "id": "AAhkBWQnp",
+      "email": "vxthu.hanu@gmail.com",
+      "password": "123456"
     },
     {
       "name": "Yen",
