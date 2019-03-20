@@ -1,0 +1,42 @@
+extends ../layouts/common
+block content
+	h1 
+		span.mr-3 Products
+		a.btn.btn-primary(href='/products/create') New
+	.d-flex.align-items-center
+		form.ml-auto(action='/products/search', method='GET' class='d-flex')
+			input(type='text', name='q', value=q class='form-control' placeholder='Type a name')
+			button(class='btn btn-primary ml-2') Search
+	.album.py-5.bg-light
+		.container
+			.row
+				each product in products
+					if (page > totalPage)
+						h3 No product found.
+					else
+						.col-md-4
+							.card.mb-4.box-shadow
+								img.card-img-top(data-src='holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail', alt='Thumbnail [100%x225]', style='width: 100%; display: block;', src=product.image, data-holder-rendered='true')
+								.card-body
+									h3.card-text=product.name
+									p.card-text=product.description
+									.d-flex.justify-content-between.align-items-center
+										.btn-group
+											button.btn.btn-sm.btn-outline-secondary(type='button') View
+											button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+										small.text-muted 9 mins
+		nav(aria-label='...')
+		ul.pagination.justify-content-end.mr-3
+			if (prevPage != -1)
+				li.page-item
+					a.page-link(href='/products/') &laquo;
+				li.page-item
+					a.page-link(href=`/products?page=${prevPage}`)= prevPage
+			li.page-item.active
+				span.page-link=page 
+					span.sr-only (current)
+			if (nextPage != -1)
+				li.page-item
+					a.page-link(href=`/products?page=${nextPage}`)= nextPage
+				li.page-item
+					a.page-link(href=`/products?page=${totalPage}`) &raquo;

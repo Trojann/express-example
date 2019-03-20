@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 const db = require('./db.js')
 const userRoute = require('./routes/user.route')
 const authRoute = require('./routes/auth.route')
+const productRoute = require('./routes/product.route')
 const AuthMiddleware = require('./middlewares/auth.mdw')
 
 const app = express()
@@ -21,7 +22,9 @@ app.get('/', (req, res) => res.render('index', {
 
 app.use('/users', AuthMiddleware.requireAuth, userRoute)
 
-app.use('/auth', authRoute)
+app.use('/auth', productRoute)
+
+app.use('/products', AuthMiddleware.requireAuth, productRoute)
 
 app.use(express.static('public'))
 
