@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+
 const db = require('./db.js')
 const userRoute = require('./routes/user.route')
 const authRoute = require('./routes/auth.route')
@@ -22,7 +23,7 @@ app.get('/', (req, res) => res.render('index', {
 
 app.use('/users', AuthMiddleware.requireAuth, userRoute)
 
-app.use('/auth', productRoute)
+app.use('/auth', authRoute)
 
 app.use('/products', AuthMiddleware.requireAuth, productRoute)
 

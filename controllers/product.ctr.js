@@ -14,6 +14,10 @@ module.exports.index = (req, res) => {
 		nextPage = -1
 		prevPage = -1
 	}
+	if (products.slice(start, end).length < perPage) {
+		nextPage = -1
+		prevPage = totalPage - 1
+	}
 
 	res.render('products/index', {
 		products: products.slice(start, end),
@@ -21,5 +25,14 @@ module.exports.index = (req, res) => {
 		nextPage,
 		prevPage,
 		totalPage
+	})
+}
+
+module.exports.search = (req, res) => {
+	const {q} = req.query
+	const matchProducts = db.get('products').value().filter(item => item.name.toLowerCase().indexOf(q.toLowerCase()) !== -1)
+	res.render('products/index', {
+		products: matchProducts,
+		q
 	})
 }

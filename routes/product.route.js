@@ -6,4 +6,6 @@ const ProductController = require('../controllers/product.ctr')
 
 router.get('/', ProductController.index)
 
+router.get('/search', ProductController.search)
+
 module.exports = router
