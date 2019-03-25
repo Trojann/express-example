@@ -14,6 +14,5 @@ module.exports.requireAuth = (req, res, next) => {
 	}
 
 	res.locals.user = user
-
 	next()
 }
