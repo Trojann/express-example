@@ -15,9 +15,9 @@ document
 						a.nav-link(href='/users') Users
 					li.nav-item
 						a.nav-link(href='/products') Products
-					li.nav-item
-						a.nav-link(href='/cart') Cart 
-							span= countCart && `(${countCart})`
+					//- li.nav-item
+					//- 	a.nav-link(href='/cart') Cart 
+					//- 		span= countCart && `(${countCart})`
 			p= user ? user.name : ''
 		.container.pt-5
 			block content

@@ -9,33 +9,20 @@
       "id": "t3mxRhzCH"
     },
     {
-      "name": "Thu",
-      "id": "DqDiJXTNd"
-    },
-    {
       "name": "bot",
       "id": "bB2i-sMM5"
     },
     {
-      "name": "Adam",
-      "id": "UDcJenm2r"
+      "name": "Admin",
+      "id": "UDcJenm2r",
+      "phone": "0966890829",
+      "email": "admin@admin",
+      "password": "123456"
     },
     {
       "name": "dasd",
       "phone": "321312",
       "id": "vjaJ0VR_h"
-    },
-    {
-      "name": "Thu",
-      "phone": "123123123132",
-      "id": "AAhkBWQnp",
-      "email": "vxthu.hanu@gmail.com",
-      "password": "123456"
-    },
-    {
-      "name": "Yen",
-      "phone": "312321312312",
-      "id": "7ZsSpTXyE"
     },
     {
       "name": "Thu",
@@ -878,6 +865,28 @@
         "95b86ca4-6039-4aae-9dd4-38ebb1c1e4ab": 7,
         "1eb819ed-fe2b-461b-b0ed-467ef993e8aa": 1,
         "f89d706e-62ae-4ca5-9066-9a1b208dd8d1": 1
+      }
+    },
+    {
+      "id": "tsGHUBk1P"
+    },
+    {
+      "id": "bjIXF95Vg"
+    },
+    {
+      "id": "PSG-v4ZqX"
+    },
+    {
+      "id": "LmACrtX8C"
+    },
+    {
+      "id": "sVVIp6w4D"
+    },
+    {
+      "id": "ZIImcTHBt",
+      "cart": {
+        "1eb819ed-fe2b-461b-b0ed-467ef993e8aa": 1,
+        "95b86ca4-6039-4aae-9dd4-38ebb1c1e4ab": 1
       }
     }
   ]
